@@ -1,4 +1,5 @@
 import React from 'react';
+import Posts from './Posts/Posts';
 
 
 const Profile = () => {
@@ -17,11 +18,8 @@ const Profile = () => {
             </div>
          </div>
 
-         <div className="user-post">
-            <div className="user-post__enter-area" > Here will be area for write</div>
-            <div className="user-post__list" >Here will be posts...</div>
+         <Posts />
 
-         </div>
 
       </div>
    )
