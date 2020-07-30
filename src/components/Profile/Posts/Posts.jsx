@@ -8,8 +8,8 @@ const Posts = () => {
 
       <div className="user-post">
          <div className="user-post__enter-area" >
-            <textarea className="user-post__textarea" id="post__textarea" ></textarea>
-            <a className="user-post__btn-add" href="#">Add post</a>
+            <textarea placeholder="Enter your text..." className="user-post__textarea" id="post__textarea" ></textarea>
+            <a className="user-post__btn-add" href="#">Send</a>
          </div>
          <div className="user-post__list" >
             <Post message="Hi, my first post" like_count="2" />
