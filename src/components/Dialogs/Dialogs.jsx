@@ -1,39 +1,39 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
-const DialogItem = (props) => {
-
-   let path = "/dialogs/" + props.id;
-
-   return (
-      <div className="dialogs__item dialogs__item--active">
-         <NavLink to={path}>{props.name}</NavLink>
-      </div>
-   )
-}
-
-
-const Message = (props) => {
-
-   return (
-      <div className="dialogs__chat-message">
-         {props.message}
-      </div>
-   )
-
-}
 
 const Dialogs = (props) => {
+
+   let dialogsData = [
+      { id: 1, name: "Alexander" },
+      { id: 2, name: "Valera" },
+      { id: 3, name: "Masha" }
+   ];
+
+   let messages = [
+      { id: 1, message: "Hi,Alexander" },
+      { id: 2, message: "How are you?" },
+      { id: 3, message: "Its okay!" }
+   ];
+
+
+
+   let dialogsElement = dialogsData
+      .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
+
+   let massagesElement = messages
+      .map(message => <Message message={message.message} />);
+
    return (
 
       <div className="dialogs">
          <div className="dialogs__list">
-            <DialogItem name="Alexander" id="1" />
-            <DialogItem name="Masha" id="2" />
-            <DialogItem name="Petya" id="3" />
+            {dialogsElement}
          </div>
          <div className="dialogs__chat">
-            <Message message="Hi!" />
+            {massagesElement}
          </div>
       </div>
 
