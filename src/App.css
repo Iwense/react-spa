@@ -12,7 +12,7 @@ body{
 }
 .main{
   display: grid;
-  width: 980px;
+  width: 1024px;
   margin:0 auto;
   grid-template-areas:
   "h h"
@@ -72,28 +72,29 @@ body{
   font-size: 16px;
 }
 
-/*Posts text area*/
-.user-post__enter-area{
+/*EnterArea component*/
+.enter-area{
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
-.user-post__textarea{
-  width: 80%;
+.enter-area__textarea{
+  width: 90%;
   height: 50px;
   resize: none;
   background: rgb(226, 226, 226);
   box-shadow: 0 0 5px rgba(136,136,136,0.9);
   border:0;
+  padding: 10px 20px;
 }
-.user-post__btn-add{
+.enter-area__btn-add{
   display: block;
   padding: 10px;
   color:#444;
   border-radius: 3px;
   box-shadow: 0 0 5px rgba(139, 139, 139, 0.5);
 }
-.user-post__btn-add:hover{
+.enter-area__btn-add:hover{
   color:#000;
   box-shadow: 0 0 5px rgba(0,0,0,0.9);
 }
@@ -135,4 +136,27 @@ body{
 }
 .dialogs__item--active{
   font-weight: 700;
+}
+
+/*sidebar block friends*/
+.friends{
+  margin-top: 50px;
+  width: 100%;
+}
+.friends__wrapper{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.friends__item{
+  width: 33.333%;
+  font-size: 12px;
+}
+.friends__item-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.friends__item-img:hover{
+  box-shadow:0 0 10px rgba(222,222,333,1);
 }

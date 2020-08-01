@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const Sidebar = () => {
+const Navbar = (props) => {
    return (
-      <nav className="sidebar">
+
+      <nav className="sidebar__nav">
          <div className="sidebar__link-wrapper">
             <NavLink className="sidebar__link" to="/profile">Profile</NavLink>
             <NavLink className="sidebar__link" to="/dialogs">Messages</NavLink>
@@ -12,8 +13,10 @@ const Sidebar = () => {
             <NavLink className="sidebar__link" to="/settings">Settings</NavLink>
          </div>
       </nav>
+
+
    )
 }
 
 
-export default Sidebar;
+export default Navbar;
