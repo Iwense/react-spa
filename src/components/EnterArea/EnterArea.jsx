@@ -1,23 +1,29 @@
 import React from 'react';
-
+import { addPostActionCreator } from './../../redux/state';
+import { updateNewPostTextActionCreator } from './../../redux/state';
 
 
 const EnterArea = (props) => {
 
    let newPostAdd = React.createRef()
 
-   const handleClick = (e) => {
-      e.preventDefault();
-
+   const onChangeText = () => {
       let text = newPostAdd.current.value;
-      alert(text);
+      let action = updateNewPostTextActionCreator(text)
+      props.dispatch(action)
+   }
+
+   const addPost = (e) => {
+      e.preventDefault();
+      let action = addPostActionCreator()
+      props.dispatch(action);
    }
 
    return (
 
       <div className="enter-area" >
-         <textarea placeholder={props.placeholder} className="enter-area__textarea" ref={newPostAdd} ></textarea>
-         <a className="enter-area__btn-add" onClick={handleClick} href="#">Send</a>
+         <textarea onChange={onChangeText} value={props.newPostText} placeholder={props.placeholder} className="enter-area__textarea" ref={newPostAdd} ></textarea>
+         <a className="enter-area__btn-add" onClick={addPost} href="#">Send</a>
       </div>
 
 
@@ -25,4 +31,4 @@ const EnterArea = (props) => {
 }
 
 
-export default EnterArea;
+export default EnterArea; 

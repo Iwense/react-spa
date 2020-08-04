@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import EnterArea from '../EnterArea/EnterArea';
+import MessageEnter from '../MessageEnter/MessageEnter';
 
 
 const Dialogs = (props) => {
@@ -14,15 +14,6 @@ const Dialogs = (props) => {
    let massagesElement = props.state.messages
       .map(message => <Message message={message.message} />);
 
-   let newPostAdd = React.createRef()
-
-
-   const handleClick = (e) => {
-      e.preventDefault();
-
-      let text = newPostAdd.current.value;
-      alert(text);
-   }
 
    return (
 
@@ -32,7 +23,10 @@ const Dialogs = (props) => {
          </div>
          <div className="dialogs__chat">
             {massagesElement}
-            <EnterArea placeholder="Your message.." />
+            <MessageEnter
+               dispatch={props.dispatch}
+               newMessageText={props.state.newMessageText}
+               placeholder="Your message.." />
          </div>
       </div>
 

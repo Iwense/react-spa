@@ -15,7 +15,10 @@ const Posts = (props) => {
 
       <div className="user-post">
 
-         <EnterArea placeholder="Enter your text..." />
+         <EnterArea
+            dispatch={props.dispatch}
+            newPostText={props.state.newPostText}
+            placeholder="Enter your text..." />
 
          <div className="user-post__list" >
             {postsElements}
