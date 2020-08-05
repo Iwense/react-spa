@@ -1,6 +1,5 @@
 import React from 'react';
-import { addPostActionCreator } from './../../redux/state';
-import { updateNewPostTextActionCreator } from './../../redux/state';
+import { updateNewPostTextActionCreator, addPostActionCreator } from './../../redux/profileReducer';
 
 
 const EnterArea = (props) => {
