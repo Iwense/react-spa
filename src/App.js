@@ -7,9 +7,11 @@ import Dialogs from './components/Dialogs/Dialogs';
 import { Route, BrowserRouter } from 'react-router-dom';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="main">
@@ -19,9 +21,7 @@ const App = (props) => {
 
         <Route path='/dialogs'
           render={() =>
-            <Dialogs
-              state={props.state.dialogsPage}
-              dispatch={props.dispatch} />} />
+            <DialogsContainer />} />
 
         <Route path="/profile"
           render={() =>

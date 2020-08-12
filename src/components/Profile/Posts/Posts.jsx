@@ -1,24 +1,21 @@
 import React from 'react';
 import Post from './Post/Post';
-import EnterArea from '../../EnterArea/EnterArea';
+import EnterAreaContainer from './EnterArea/EnterAreaContainer';
 
 
 
 const Posts = (props) => {
 
 
-   let postsElements = props.state.posts
-      .map(p => <Post message={p.message} like_count={p.like_count} />)
+   let postsElements = props.posts
+      .map(p => <Post message={p.message} like_count={p.like_count} key={p.id} />)
 
 
    return (
 
       <div className="user-post">
 
-         <EnterArea
-            dispatch={props.dispatch}
-            newPostText={props.state.newPostText}
-            placeholder="Enter your text..." />
+         <EnterAreaContainer />
 
          <div className="user-post__list" >
             {postsElements}

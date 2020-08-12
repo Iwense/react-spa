@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateNewMessageTextActionCreator, addMessageActionCreator } from '../../redux/dialogsReducer';
 
 
 const MessageEnter = (props) => {
@@ -8,14 +7,12 @@ const MessageEnter = (props) => {
 
    const onChangeText = () => {
       let text = newMessageAdd.current.value;
-      let action = updateNewMessageTextActionCreator(text)
-      props.dispatch(action)
+      props.updateNewMessageText(text)
    }
 
    const addMessage = (e) => {
       e.preventDefault();
-      let action = addMessageActionCreator()
-      props.dispatch(action);
+      props.addMessageText()
    }
 
    return (

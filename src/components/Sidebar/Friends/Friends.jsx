@@ -6,7 +6,7 @@ const Friends = (props) => {
 
 
    let friendsList = props.state.friends
-      .map(friend => <FriendsItem name={friend.name} photo={friend.photo} />)
+      .map(friend => <FriendsItem name={friend.name} photo={friend.photo} key={friend.id} />)
 
    return (
       <div className="friends__wrapper">

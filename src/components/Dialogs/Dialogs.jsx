@@ -1,18 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import MessageEnter from '../MessageEnter/MessageEnter';
+import MessageEnterContainer from './Message/MessageEnter/MessageEnterContainer';
 
 
 const Dialogs = (props) => {
+   let dialogsElement = props.dialogs
+      .map(dialog => <DialogItem name={dialog.name} id={dialog.id} key={dialog.id} />);
 
-
-   let dialogsElement = props.state.dialogs
-      .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
-
-   let massagesElement = props.state.messages
-      .map(message => <Message message={message.message} />);
+   let massagesElement = props.messages
+      .map(message => <Message message={message.message} key={message.id} />);
 
 
    return (
@@ -23,10 +20,7 @@ const Dialogs = (props) => {
          </div>
          <div className="dialogs__chat">
             {massagesElement}
-            <MessageEnter
-               dispatch={props.dispatch}
-               newMessageText={props.state.newMessageText}
-               placeholder="Your message.." />
+            <MessageEnterContainer />
          </div>
       </div>
 

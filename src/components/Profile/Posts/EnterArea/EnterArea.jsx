@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateNewPostTextActionCreator, addPostActionCreator } from './../../redux/profileReducer';
 
 
 const EnterArea = (props) => {
@@ -8,14 +7,12 @@ const EnterArea = (props) => {
 
    const onChangeText = () => {
       let text = newPostAdd.current.value;
-      let action = updateNewPostTextActionCreator(text)
-      props.dispatch(action)
+      props.updateNewPostText(text)
    }
 
    const addPost = (e) => {
       e.preventDefault();
-      let action = addPostActionCreator()
-      props.dispatch(action);
+      props.addPostText();
    }
 
    return (

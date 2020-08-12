@@ -1,6 +1,7 @@
 import React from 'react';
 import Posts from './Posts/Posts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import PostsContainer from './Posts/PostsContainer';
 
 
 const Profile = (props) => {
@@ -8,9 +9,7 @@ const Profile = (props) => {
       <div className="main-content">
 
          <ProfileInfo />
-         <Posts
-            state={props.state}
-            dispatch={props.dispatch} />
+         <PostsContainer />
 
 
       </div>
