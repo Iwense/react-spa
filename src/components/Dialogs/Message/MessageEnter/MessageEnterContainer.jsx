@@ -6,7 +6,7 @@ import MessageEnter from './MessageEnter'
 
 const mapStateToProps = (state) => {
    return {
-      newMessageText: state.newMessageText,
+      newMessageText: state.dialogsPage.newMessageText,
       placeholder: 'Your message..'
 
    }

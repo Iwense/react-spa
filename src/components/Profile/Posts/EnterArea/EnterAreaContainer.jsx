@@ -6,7 +6,7 @@ import EnterArea from './EnterArea'
 
 const mapStateToProps = (state) => {
    return {
-      newPostText: state.newPostText,
+      newPostText: state.profilePage.newPostText,
       placeholder: 'Enter your text...'
 
    }
