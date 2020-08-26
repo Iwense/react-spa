@@ -160,3 +160,39 @@ body{
 .friends__item-img:hover{
   box-shadow:0 0 10px rgba(222,222,333,1);
 }
+
+/*Users*/
+.user-friend{
+  display: flex;
+  justify-content: start;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(222,222,333,1);
+  margin: 15px auto;
+  padding: 10px;
+}
+.user-friend__info{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.user-friend__img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.user-friend__info{
+  margin-left: 50px;
+}
+.user-friend__name{
+  font-weight: 900;
+  font-size: 14px;
+}
+.user-friend__btn{
+  padding: 5px;
+  border: 0;
+  background: inherit;
+  color:#000;
+  margin-left: 3px;
+  margin-top:5px;
+  box-shadow: 0 0 10px rgba(222,222,333,1);
+}
