@@ -196,3 +196,22 @@ body{
   margin-top:5px;
   box-shadow: 0 0 10px rgba(222,222,333,1);
 }
+.user-list__pagination{
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  margin:20px auto;
+  flex-wrap: wrap;
+}
+.user-list__pagination-page{
+  margin-right: 3px;
+  cursor: pointer;
+}
+.user-list__pagination-page:hover{
+  font-weight: 700;
+}
+.user-list__pagination-page--selected{
+  font-weight: 700;
+}
