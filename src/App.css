@@ -196,6 +196,10 @@ body{
   margin-top:5px;
   box-shadow: 0 0 10px rgba(222,222,333,1);
 }
+.user-friend__status{
+  overflow: hidden;
+  width: 100px;
+}
 .user-list__pagination{
   text-align: center;
   font-weight: 500;
@@ -214,4 +218,9 @@ body{
 }
 .user-list__pagination-page--selected{
   font-weight: 700;
+}
+.user-list__preloader{
+  width:100px;
+  height: auto;
+  margin:0 auto;
 }

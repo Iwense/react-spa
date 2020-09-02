@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom';
 
 
 const Users = (props) => {
@@ -13,7 +13,10 @@ const Users = (props) => {
    let html = props.users.map(u => <div key={u.id} className="user-friend">
       <div className="user-friend__item">
 
-         <div className="user-friend__image"><img className="user-friend__img" src={u.photo} alt={u.name} /></div>
+         <NavLink to={`/profile/${u.id}`}>
+            <div className="user-friend__image"><img className="user-friend__img" src={u.photo} alt={u.name} /></div>
+         </NavLink>
+
          {u.followed ?
             <button className="user-friend__btn" onClick={() => { props.unfollow(u.id) }} > Unfollow </button>
             : <button className="user-friend__btn" onClick={() => { props.follow(u.id) }} > Follow </button>
