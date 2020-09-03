@@ -14,7 +14,7 @@ const Users = (props) => {
       <div className="user-friend__item">
 
          <NavLink to={`/profile/${u.id}`}>
-            <div className="user-friend__image"><img className="user-friend__img" src={u.photo} alt={u.name} /></div>
+            <div className="user-friend__image"><img className="user-friend__img" src={u.photos.large} alt={u.name} /></div>
          </NavLink>
 
          {u.followed ?

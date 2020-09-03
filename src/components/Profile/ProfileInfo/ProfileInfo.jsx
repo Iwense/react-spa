@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
    return (
       <div className="user">
          <div className="user__avatar">
-            <img className="user__img" src={props.profile.photos.small}></img>
+            <img className="user__img" src={props.profile.photos.large}></img>
          </div>
          <div className="user__info">
             <p className="user__name">{props.profile.fullName}</p>
@@ -32,6 +32,7 @@ const ProfileInfo = (props) => {
          </div>
       </div>
    )
+
 }
 
 export default ProfileInfo;
