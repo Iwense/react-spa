@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import HeaderContainer from './components/HeaderContainer';
 
 
 const App = (props) => {
@@ -16,7 +17,7 @@ const App = (props) => {
     <BrowserRouter>
       <div className="main">
 
-        <Header />
+        <HeaderContainer />
         <Sidebar state={props.state.sidebar} />
 
         <Route path='/dialogs'

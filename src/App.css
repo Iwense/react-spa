@@ -29,6 +29,7 @@ body{
 } */
 .header{
   grid-area:h;
+  position: relative;
 }
 .sidebar{
   grid-area: sb;

@@ -12,7 +12,7 @@ class UsersContainer extends React.Component {
    componentDidMount() {
       this.props.toggleIsFetching(true)
       axios
-         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, { withCredentials: true })
          .then(response => {
             this.props.toggleIsFetching(false)
             this.props.setUsers(response.data.items)
@@ -25,12 +25,31 @@ class UsersContainer extends React.Component {
       this.props.setCurrentPage(pageNumber)
       this.props.toggleIsFetching(true)
       axios
-         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+         .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, { withCredentials: true })
          .then(response => {
             this.props.toggleIsFetching(false)
             this.props.setUsers(response.data.items)
          })
    }
+
+   followHandler = (id) => {
+      axios
+         .post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, {}, { withCredentials: true, headers: { "API-KEY": '16ce2d84-6245-4b19-a529-cd15039660d9' } })
+         .then(response => {
+            this.props.follow(id)
+         })
+
+   }
+
+   unfollowHandler = (id) => {
+      axios
+         .delete(`https://social-network.samuraijs.com/api/1.0/follow/${id}`, { withCredentials: true, headers: { "API-KEY": '16ce2d84-6245-4b19-a529-cd15039660d9' } })
+         .then(response => {
+            this.props.unfollow(id)
+         })
+
+   }
+
    render() {
       return (
          <>
@@ -39,8 +58,8 @@ class UsersContainer extends React.Component {
                   totalUsersCount={this.props.totalUsersCount}
                   pageSize={this.props.pageSize}
                   users={this.props.users}
-                  unfollow={this.props.unfollow}
-                  follow={this.props.follow}
+                  unfollow={this.unfollowHandler}
+                  follow={this.followHandler}
                   currentPage={this.props.currentPage}
                   onPageChanged={this.onPageChanged}
                />}
