@@ -18,8 +18,8 @@ const Users = (props) => {
          </NavLink>
 
          {u.followed ?
-            <button className="user-friend__btn" onClick={() => { props.unfollow(u.id) }} > Unfollow </button>
-            : <button className="user-friend__btn" onClick={() => { props.follow(u.id) }} > Follow </button>
+            <button className="user-friend__btn" disabled={props.FollowFetching.some(id => id === u.id)} onClick={() => { props.unfollow(u.id) }} > Unfollow </button>
+            : <button className="user-friend__btn" disabled={props.FollowFetching.some(id => id === u.id)} onClick={() => { props.follow(u.id) }} > Follow </button>
          }
       </div>
 
